@@ -17,12 +17,28 @@ title: Home
 </body>
 
 <body>
-    <ol>
-        {% for photo in tester.collections -%}
-        <li>{{ photo.title }}</li>
-        {% endfor -%}
-    </ol>
+    <ul>
+        {% for photo in pexels.collections.collections -%}
 
+	{% if photo.id == "xs9vlnz" -%}
+	<li><a href="#Pumpkins">{{photo.title}}</a></li>
+	{% endif -%}
+
+	{% if photo.id != "xs9vlnz" -%}
+	<li>{{photo.title}}</li>
+	{% endif -%}
+	
+        {% endfor -%}
+    </ul>
+
+    <h4 id="Pumpkins">Pumpkins</h4>
+
+    
+      {% for photo in photos.xs9vlnz.media -%}
+      <a href="/photos/{{media.id}}"><img src="{{photo.src.original}}" alt="{{photo.alt}}" width="300" height="300">
+      {% endfor-%}
+    
+    
 </body>
 
 <footer>
